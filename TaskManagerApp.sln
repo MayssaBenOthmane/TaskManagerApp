@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskService", "TaskService\TaskService.csproj", "{1C2E8D12-0FA4-463C-906E-298C54570F98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService", "TaskService\TaskService.csproj", "{1C2E8D12-0FA4-463C-906E-298C54570F98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "NotificationService\NotificationService.csproj", "{678FC7F7-49BE-4361-8C1C-D3F53825DC59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService", "NotificationService\NotificationService.csproj", "{678FC7F7-49BE-4361-8C1C-D3F53825DC59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskServiceTests", "TaskServiceTests\TaskServiceTests.csproj", "{D221B764-9B83-4F90-869C-040C795713AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{678FC7F7-49BE-4361-8C1C-D3F53825DC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{678FC7F7-49BE-4361-8C1C-D3F53825DC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{678FC7F7-49BE-4361-8C1C-D3F53825DC59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D221B764-9B83-4F90-869C-040C795713AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D221B764-9B83-4F90-869C-040C795713AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D221B764-9B83-4F90-869C-040C795713AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D221B764-9B83-4F90-869C-040C795713AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

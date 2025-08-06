@@ -2,6 +2,7 @@
 using TaskService.Models;
 using TaskService.Services;
 using System.Text.Json;
+using TaskService.Interfaces;
 
 namespace TaskService.Controllers;
 
@@ -9,13 +10,13 @@ namespace TaskService.Controllers;
 [Route("api/[controller]")]
 public class TasksController : ControllerBase
 {
-    private readonly TaskRepository repo;
-    private readonly RabbitMQPublisher publisher;
+    private readonly ITaskRepository repo;
+    private readonly IRabbitMQPublisher publisher;
 
-    public TasksController()
+    public TasksController(ITaskRepository repo, IRabbitMQPublisher publisher)
     {
-        repo = new TaskRepository();
-        publisher = new RabbitMQPublisher();
+        this.repo = repo;
+        this.publisher = publisher;
     }
 
     [HttpGet]

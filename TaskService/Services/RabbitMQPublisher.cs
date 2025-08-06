@@ -1,9 +1,10 @@
 ﻿using RabbitMQ.Client;
 using System.Text;
+using TaskService.Interfaces;
 
 namespace TaskService.Services;
 
-public class RabbitMQPublisher
+public class RabbitMQPublisher : IRabbitMQPublisher
 {
     private readonly IModel channel;
 

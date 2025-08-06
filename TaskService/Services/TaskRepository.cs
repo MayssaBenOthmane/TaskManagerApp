@@ -1,9 +1,10 @@
 ﻿using System.Text.Json;
+using TaskService.Interfaces;
 using TaskService.Models;
 
 namespace TaskService.Services
 {
-    public class TaskRepository
+    public class TaskRepository : ITaskRepository
     {
         private readonly string file = "Data/tasks.json";
         private List<TaskInfo> tasks;
@@ -35,14 +36,7 @@ namespace TaskService.Services
 
         public TaskInfo GetById(Guid id)
         {
-            foreach (var task in tasks)
-            {
-                if (task.Id == id)
-                {
-                    return task;
-                }
-            }
-            return null;
+            return tasks.FirstOrDefault(t => t.Id == id);
         }
 
         public TaskInfo Add(TaskInfo task)
@@ -70,14 +64,12 @@ namespace TaskService.Services
 
         public bool Delete(Guid id)
         {
-            for (int i = 0; i < tasks.Count; i++)
+            var index = tasks.FindIndex(t => t.Id == id);
+            if (index != -1)
             {
-                if (tasks[i].Id == id)
-                {
-                    tasks.RemoveAt(i);
-                    Save();
-                    return true;
-                }
+                tasks.RemoveAt(index);
+                Save();
+                return true;
             }
             return false;
         }
